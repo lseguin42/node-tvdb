@@ -8,9 +8,6 @@
     "node/node.d.ts": {
       "commit": "ec9eb4b28c74665a602c22db3457f0a76fa0fa23"
     },
-    "es6-promise/es6-promise.d.ts": {
-      "commit": "ec9eb4b28c74665a602c22db3457f0a76fa0fa23"
-    },
     "request/request.d.ts": {
       "commit": "ec9eb4b28c74665a602c22db3457f0a76fa0fa23"
     },
@@ -22,6 +19,9 @@
     },
     "jszip/jszip.d.ts": {
       "commit": "ec9eb4b28c74665a602c22db3457f0a76fa0fa23"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "8d44da84eb10cdcd2f7ea133f289caef817cb2b9"
     }
   }
 }

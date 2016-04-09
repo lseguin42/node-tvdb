@@ -1,8 +1,8 @@
 /// <reference path="typings/tsd.d.ts" />
 
-import request = require('request');
-import xml2js  = require('xml2js');
-import Zip     = require('jszip');
+import * as request from 'request'
+import * as xml2js from 'xml2js'
+import * as Zip from 'jszip'
 
 const parser = xml2js.parseString
 
@@ -823,4 +823,4 @@ function parseXML(data, normalise, callback) {
     });
 }
 
-export = TvDB
+export default TvDB

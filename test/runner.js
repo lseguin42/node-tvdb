@@ -1,5 +1,4 @@
 var NativeClient = require("..");
-var CompatClient = require("../compat");
 
 function test(client) {
     [
@@ -30,7 +29,4 @@ function test(client) {
 
 describe("Native client", function() {
     test(NativeClient);
-});
-describe("Compatibility client", function() {
-    test(CompatClient);
 });

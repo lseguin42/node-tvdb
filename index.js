@@ -1,4 +1,5 @@
 /// <reference path="typings/tsd.d.ts" />
+"use strict";
 var request = require('request');
 var xml2js = require('xml2js');
 var Zip = require('jszip');
@@ -37,6 +38,16 @@ var TvDB = (function () {
         this.language = language;
         this.baseURL = "http://www.thetvdb.com/api";
     }
+    /**
+     * Change Language
+     *
+     * @param {String} language
+     * @return {TvDB} this
+     */
+    TvDB.prototype.setLanguage = function (language) {
+        this.language = language;
+        return this;
+    };
     /**
      * Get available languages useable by TheTVDB API
      *
@@ -268,7 +279,7 @@ var TvDB = (function () {
         }
     };
     return TvDB;
-})();
+}());
 //
 // Utilities
 //
@@ -364,4 +375,5 @@ function parseXML(data, normalise, callback) {
         });
     });
 }
-module.exports = TvDB;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = TvDB;
