@@ -22,22 +22,22 @@
   "dependencies": {
     "jszip": "2.6.0",
     "request": "2.70.0",
-    "xml2js": "0.4.16",
-    "tsd": "^0.6.5"
+    "xml2js": "0.4.16"
   },
   "devDependencies": {
+    "@lib/autodts-generator": "0.0.2",
     "gulp": "3.9.1",
     "gulp-es6-transpiler": "1.0.1",
     "mocha": "2.4.5",
-    "typescript": "^1.8.9"
+    "typescript": "^1.8.9",
+    "tsd": "^0.6.5"
   },
   "scripts": {
     "test": "npm run tsc; npm run gulp && npm run mocha",
     "mocha": "node node_modules/mocha/bin/mocha test/runner",
     "gulp": "node node_modules/gulp/bin/gulp.js",
     "tsc": "node node_modules/typescript/bin/tsc",
-    "tsd": "node node_modules/tsd/build/cli.js install",
-    "postinstall": "npm run tsd"
+    "tsd": "node node_modules/tsd/build/cli.js install"
   },
   "license": "MIT"
 }

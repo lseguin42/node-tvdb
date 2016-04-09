@@ -1,5 +1,4 @@
 /// <reference path="typings/tsd.d.ts" />
-"use strict";
 var request = require('request');
 var xml2js = require('xml2js');
 var Zip = require('jszip');
@@ -269,7 +268,7 @@ var TvDB = (function () {
         }
     };
     return TvDB;
-}());
+})();
 //
 // Utilities
 //
