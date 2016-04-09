@@ -1,7 +1,7 @@
 {
   "name": "tvdb.ts",
   "description": "Node.js library for accessing TheTVDB's API",
-  "version": "1.6.7",
+  "version": "1.6.8",
   "author": "Lionel Seguin <lseguin@student.42.fr>",
   "keywords": [
     "tv",
