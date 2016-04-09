@@ -823,4 +823,4 @@ function parseXML(data, normalise, callback) {
     });
 }
 
-export default TvDB
+export = TvDB

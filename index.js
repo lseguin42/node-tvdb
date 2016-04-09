@@ -375,5 +375,4 @@ function parseXML(data, normalise, callback) {
         });
     });
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = TvDB;
+module.exports = TvDB;
