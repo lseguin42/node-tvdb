@@ -22,7 +22,7 @@ Pull requests are always very welcome.
 Install with [npm](http://npmjs.org/):
 
 ``` shell
-npm install --save node-tvdb
+npm install --save tvdb-tsc
 ```
 
 And run tests with [Mocha](http://visionmedia.github.io/mocha/):
@@ -38,7 +38,7 @@ TVDB_KEY=[YOUR API KEY HERE] npm test
 To start using this library you first need an API key. You can request one [here](http://thetvdb.com/?tab=apiregister). Then just follow this simple example that fetches all the shows containing "The Simpsons" in the name.
 
 ``` javascript
-var TVDB = require("node-tvdb");
+var TVDB = require("tvdb-tsc");
 var tvdb = new TVDB("ABC123");
 
 tvdb.getSeriesByName("The Simpsons", function(err, response) {
@@ -46,13 +46,13 @@ tvdb.getSeriesByName("The Simpsons", function(err, response) {
 });
 ```
 
-For use with node engines without `class`/`const`/`let`:
+``` typescript
+import TVDB = require("tvdb-tsc");
+var tvdb = new TVDB("ABC123")
 
-``` javascript
-var TVDB = require("node-tvdb/compat");
-var tvdb = new TVDB("ABC123");
-
-// continue as normal...
+tvdb.getSeriesByName("The Simpsons", (err, response) => {
+    // response is typed !
+})
 ```
 
 ## API
