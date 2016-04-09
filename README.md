@@ -1,4 +1,4 @@
-# tvdb-tsc
+# tvdb.ts
 
 Node.js library for accessing [TheTVDB API](http://www.thetvdb.com/wiki/index.php/Programmers_API). Refactored from [edwellbrook/node-tvdb](https://github.com/edwellbrook/node-tvdb) to give TypeScript Completion
 
@@ -22,12 +22,13 @@ Pull requests are always very welcome.
 Install with [npm](http://npmjs.org/):
 
 ``` shell
-npm install --save tvdb-tsc
+npm install --save tvdb.ts
 ```
 
 And run tests with [Mocha](http://visionmedia.github.io/mocha/):
 
 ``` shell
+npm install --dev
 TVDB_KEY=[YOUR API KEY HERE] npm test
 ```
 
@@ -38,7 +39,8 @@ TVDB_KEY=[YOUR API KEY HERE] npm test
 To start using this library you first need an API key. You can request one [here](http://thetvdb.com/?tab=apiregister). Then just follow this simple example that fetches all the shows containing "The Simpsons" in the name.
 
 ``` javascript
-var TVDB = require("tvdb-tsc");
+// (Javascript) index.js
+var TVDB = require("tvdb.ts");
 var tvdb = new TVDB("ABC123");
 
 tvdb.getSeriesByName("The Simpsons", function(err, response) {
@@ -47,11 +49,12 @@ tvdb.getSeriesByName("The Simpsons", function(err, response) {
 ```
 
 ``` typescript
-import TVDB = require("tvdb-tsc");
+// (TypeScript) index.ts
+import TVDB = require("tvdb.ts");
 var tvdb = new TVDB("ABC123")
 
 tvdb.getSeriesByName("The Simpsons", (err, response) => {
-    // response is typed !
+    // response is typed ! response.<auto_completion>
 })
 ```
 
@@ -61,256 +64,256 @@ tvdb.getSeriesByName("The Simpsons", (err, response) => {
 
 Set up tvdb client with API key and optional language (defaults to "en")
 
-``` javascript
-var Client = require("node-tvdb");
+``` typescript
+import TVDB = require("tvdb.ts");
 
-var tvdb           = new Client("ABC123"); // lang defaults to "en"
-var tvdbPortuguese = new Client("ABC123", "pt");
+var tvdb           = new TVDB("ABC123"); // lang defaults to "en"
+var tvdbPortuguese = new TVDB("ABC123", "pt");
 ```
 
 ### getTime
 
 Get the current server time
 
-``` javascript
-tvdb.getTime(function(error, response) {
+``` typescript
+tvdb.getTime((error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getTime()
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getLanguages
 
 Get available languages useable by TheTVDB API
 
-``` javascript
-tvdb.getLanguages(function(error, response) {
+``` typescript
+tvdb.getLanguages((error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getLanguages()
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getSeriesByName
 
 Get basic series information by name
 
-``` javascript
-tvdb.getSeriesByName("Breaking Bad", function(error, response) {
+``` typescript
+tvdb.getSeriesByName("Breaking Bad", (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getSeriesByName("Breaking Bad")
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getSeriesById
 
 Get basic series information by id
 
-``` javascript
-tvdb.getSeriesById(73255, function(error, response) {
+``` typescript
+tvdb.getSeriesById(73255, (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getSeriesById(73255)
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getSeriesByRemoteId
 
 Get basic series information by remote id (zap2it or imdb)
 
-``` javascript
-tvdb.getSeriesByRemoteId("tt0903747", function(error, response) {
+``` typescript
+tvdb.getSeriesByRemoteId("tt0903747", (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getSeriesByRemoteId("tt0903747")
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
-> Note: `node-tvdb` automatically selects between remote providers (IMDb and zap2it)
+> Note: `tvdb.ts` automatically selects between remote providers (IMDb and zap2it)
 
 ### getSeriesAllById
 
 Get full/all series information by id
 
-``` javascript
-tvdb.getSeriesAllById(73255, function(error, response) {
+``` typescript
+tvdb.getSeriesAllById(73255, (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getSeriesAllById(73255)
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getEpisodesById
 
 Get all episodes by series id
 
-``` javascript
-tvdb.getEpisodesById(153021, function(error, response) {
+``` typescript
+tvdb.getEpisodesById(153021, (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getEpisodesById(153021)
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getEpisodeById
 
 Get episode by episode id
 
-``` javascript
-tvdb.getEpisodeById(4768125, function(error, response) {
+``` typescript
+tvdb.getEpisodeById(4768125, (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getEpisodeById(4768125)
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getEpisodeByAirDate
 
 Get series episode by air date
 
-``` javascript
-tvdb.getEpisodeByAirDate(153021, "2011-10-03", function(error, response) {
+``` typescript
+tvdb.getEpisodeByAirDate(153021, "2011-10-03", (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getEpisodeByAirDate(153021, "2011-10-03")
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getActors
 
 Get series actors by series id
 
-``` javascript
-tvdb.getActors(73255, function(error, response) {
+``` typescript
+tvdb.getActors(73255, (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getActors(73255)
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getBanners
 
 Get series banners by series id
 
-``` javascript
-tvdb.getBanners(73255, function(error, response) {
+``` typescript
+tvdb.getBanners(73255, (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getBanners(73255)
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getUpdates
 
 Get series and episode updates since a given unix timestamp
 
-``` javascript
-tvdb.getUpdates(1400611370, function(error, response) {
+``` typescript
+tvdb.getUpdates(1400611370, (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getUpdates(1400611370)
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### getUpdateRecords
 
 All updates within the given interval
 
-``` javascript
-tvdb.getUpdateRecords("day", function(error, response) {
+``` typescript
+tvdb.getUpdateRecords("day", (error, response) => {
     // handle error and response
 });
 ```
 
 OR
 
-``` javascript
+``` typescript
 tvdb.getUpdateRecords("day")
-    .then(function(response) { /* handle response */ })
-    .catch(function(error) { /* handle error */ });
+    .then((response) => { /* handle response */ })
+    .catch((error) => { /* handle error */ });
 ```
 
 ### utils.parsePipeList
 
 Parse pipe list string to javascript array
 
-``` javascript
+``` typescript
 var list = "|Mos Def|Faune A. Chambers|"; // from a previous api call
-var guestStars = Client.utils.parsePipeList(list);
+var guestStars = TVDB.utils.parsePipeList(list);
 ```
 
 ## License

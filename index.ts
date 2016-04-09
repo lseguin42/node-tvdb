@@ -415,6 +415,18 @@ class TvDB {
     private language: string
     private baseURL: string
     
+    
+    /**
+     * Change Language
+     * 
+     * @param {String} language
+     * @return {TvDB} this
+     */
+    setLanguage(language: string) {
+        this.language = language
+        return this
+    }
+    
     /**
      * Set up tvdb client with API key and optional language (defaults to "en")
      *

@@ -1,5 +1,5 @@
 {
-  "name": "tvdb-tsc",
+  "name": "tvdb.ts",
   "description": "Node.js library for accessing TheTVDB's API",
   "version": "1.6.7",
   "author": "Lionel Seguin <lseguin@student.42.fr>",
@@ -11,14 +11,14 @@
     "wrapper",
     "typescript"
   ],
-  "homepage": "https://github.com/lseguin42/tvdb-tsc",
+  "homepage": "https://github.com/lseguin42/tvdb.ts",
   "main": "index.js",
   "engines": {
     "node": ">=2.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/lseguin42/tvdb-tsc"
+    "url": "git://github.com/lseguin42/tvdb.ts"
   },
   "dependencies": {
     "jszip": "2.6.0",
